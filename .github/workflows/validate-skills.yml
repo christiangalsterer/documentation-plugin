@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  validate-skills:
     runs-on: ubuntu-latest
     permissions:
       contents: read
