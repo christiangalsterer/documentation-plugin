@@ -1,0 +1,9 @@
+{
+  "name": "documentation-plugin",
+  "version": "1.0.0",
+  "description": "Plugin for writing and maintaining technical documentation.",
+  "author": {
+    "name": "Christian Galsterer"
+  },
+  "license": "MIT"
+}
