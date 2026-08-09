@@ -1,0 +1,19 @@
+name: Continuous Integration
+
+on:
+  push:
+    paths:
+      - 'commands/**'
+      - 'skills/**'
+      - '.github/workflows/**'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: christiangalsterer/github-actions/.github/workflows/claude_code_plugins_ci.yaml@main
