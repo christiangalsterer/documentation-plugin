@@ -2,26 +2,35 @@
 name: remove-ai-slop
 description: >-
   Review and clean AI-slop from writing: filler and marketing adverbs,
-  empty openers, overused jargon, hedging, future tense for current behavior,
-  and em-dash overuse. Use when asked to remove AI-sounding phrasing, tighten
-  prose, de-AI text, edit out "simply/just/easily", flag or strip em-dashes,
-  or de-jargon a draft — even when the input is just prose or a doc with a
-  request to "clean this up". Do NOT use for commit messages (use the commit
-  skill) or for rewriting meaning, restructuring documents, or line editing
-  that is not about AI-slop.
+  empty openers, overused jargon, hedging, false agency, structural tells,
+  future tense for current behavior, and em-dash overuse. Use when asked to
+  remove AI-sounding phrasing, tighten prose, de-AI text, edit out
+  "simply/just/easily", flag or strip em-dashes, or de-jargon a draft — even
+  when the input is just prose or a doc with a request to "clean this up".
+  Do NOT use for commit messages (use the commit skill) or for rewriting
+  meaning, restructuring documents, or line editing that is not about
+  AI-slop.
 metadata:
   author: Christian Galsterer
-  version: "1.1.0"
+  version: "1.0.0"
 ---
 
 # Remove AI Slop
 
 Identify and remove AI-slop: the filler, hedging, marketing, and jargon
-phrases that AI text generators lean on, plus em-dash overuse. Output is
-cleaner prose with the meaning, facts, and technical terms intact.
+phrases that AI text generators lean on, the structural tells they use to
+manufacture insight, plus em-dash overuse. Output is cleaner prose with the
+meaning, facts, and technical terms intact.
 
 This skill is a reviewer/cleaner, not a writer. It edits what is there; it
 does not invent content or restructure the document.
+
+It covers two kinds of slop:
+
+- **Word-level** (words and phrases) — see
+  [references/phrases.md](references/phrases.md).
+- **Structural** (constructions and rhythm) — see
+  [references/structures.md](references/structures.md).
 
 ## Workflow
 
@@ -58,32 +67,65 @@ does not invent content or restructure the document.
 
 ## AI-slop detector
 
-Flag each phrase below and replace it with plain, direct language. Many are
-omittable outright.
+Flag each pattern below and replace it with plain, direct language. Many are
+omittable outright. Full detail is in the reference files.
 
-- **Filler and marketing adverbs** — cut or rewrite:
-  - "simply", "just", "easily", "effortlessly", "seamless(ly)",
-    "obviously", "please" → omit or rephrase.
-  - "we", "let's" → rephrase to second person ("you") or the active subject.
-  - "might want to" → replace with a direct imperative.
-- **Empty openers** — cut; the sentence usually reads better without them:
-  - "In today's fast-paced world…", "It is important to note…",
-    "It is worth mentioning that…", "In conclusion…", "As we all know…".
-- **Overused jargon and leverage verbs** — plain-language replacement:
-  - "utilize" → "use"; "leverage" → "use";
-  - "streamline" → "simplify" or restate concretely;
-  - "delve" → "examine" / "look into";
-  - "harness", "unleash", "empower", "revolutionize", "unlock" → concrete verb;
-  - "robust", "cutting-edge", "best-in-class", "state-of-the-art" → omit or
-    state the specific property (reliable, up to date, etc.).
+### Word-level
+
+- **Adverbs** — cut all of them (the -ly blanket rule). This includes
+  "simply", "just", "easily", "effortlessly", "seamless(ly)", "obviously",
+  "actually", "literally", "truly", "really", and all -ly softeners,
+  intensifiers, and hedges. See [references/phrases.md](references/phrases.md).
+- **Filler and throat-clearing openers** — cut: "Here's the thing/why/this/
+  that", "It turns out", "The uncomfortable truth is", "Let me be clear",
+  "In today's fast-paced world", "It is important to note", "In conclusion".
+- **Emphasis crutches and generic filler** — cut: "Full stop.", "Let that
+  sink in.", "Make no mistake", "At its core", "At the end of the day",
+  "When it comes to", "In a world where".
+- **Jargon and leverage verbs** — plain-language replacement: "utilize" →
+  "use"; "leverage" → "use"; "streamline" → "simplify"; "delve" → "examine";
+  "harness/unleash/empower/revolutionize/unlock" → concrete verb;
+  "navigate/unpack/lean into/deep dive/circle back/moving forward/
+  game-changer/double down/landscape" → plain synonym. See the jargon tables in
+  [references/phrases.md](references/phrases.md).
+- **Meta-commentary** — cut self-referential asides ("The rest of this essay
+  explains…", "In this section, we'll…").
+- **Vague declaratives** — cut or name the specific thing ("The implications
+  are significant", "The stakes are high").
+- **Telling instead of showing** — name the concrete thing ("This is genuinely
+  hard", "this is what X actually looks like").
 - **Future tense for current behavior** — change to present tense:
-  - "the tool will create" → "the tool creates"; "this app will let you" →
-    "this app lets you".
-- **Wordiness and tone** — fix throughout:
-  - No exclamation marks, no rhetorical questions, no emojis.
-  - Sentences ≤ 25 words; split nested clauses.
-  - Prefer common words: "use" not "utilize", "start" not "commence".
-  - No marketing superlatives ("best", "unparalleled", "game-changing").
+  "the tool will create" → "the tool creates"; "this app will let you" →
+  "this app lets you".
+
+### Structural
+
+- **Binary contrasts** — cut "not X, it's Y", "isn't X, it's Y", "X isn't the
+  problem, Y is". State Y directly.
+- **Negative listing** — cut "not a X... not a Y... a Z". State Z.
+- **Dramatic fragmentation** — cut "X. And Y. And Z.", "[Noun]. That's it."
+  Use complete sentences.
+- **Rhetorical setups** — cut "What if [reframe]?", "Here's what I mean:",
+  "Think about it:".
+- **False agency** — inanimate things doing human verbs ("the decision
+  emerges", "the market rewards", "the data tells us"). Name the human.
+- **Passive voice** — "X was created", "It is believed that". Find and name
+  the actor.
+- **Starters to avoid** — Wh- openers, paragraphs starting "So", sentences
+  starting "Look,".
+- **Rhythm** — two items beat three; vary paragraph endings; no stacked
+  fragments; no metronomic cadence.
+- **Lazy extremes** — "every/always/never/everyone/nobody" as false authority;
+  use specifics.
+
+See [references/structures.md](references/structures.md) for the pattern tables.
+
+## Wordiness and tone
+
+- No exclamation marks, no rhetorical questions, no emojis.
+- Sentences ≤ 25 words; split nested clauses.
+- Prefer common words: "use" not "utilize", "start" not "commence".
+- No marketing superlatives ("best", "unparalleled", "game-changing").
 
 ## Em-dash rule
 
@@ -102,8 +144,10 @@ tick; strip it unless the user explicitly opts out.
 - **Never change meaning.** Remove slop, but keep intent, facts, and
   technical terms. Ask if an ambiguous edit could change what the author
   meant.
-- **Don't rewrite what isn't slop.** This skill edits AI-slop only; it does
+- **Don't write what isn't slop.** This skill edits AI-slop only; it does
   not impose a new structure or voice on competent existing prose.
+- **Don't invent an actor.** When fixing false agency or passive voice, name
+  a real actor or use "you". Never fabricate who did something.
 - **Don't strip legitimate dashes.** Em-dashes in favor of a comma are an
   edit; a hyphen in a compound word (`state-of-the-art`) is not an em-dash.
 - **Don't invent replacements.** Prefer omission or a known substitution to
@@ -115,15 +159,22 @@ tick; strip it unless the user explicitly opts out.
 Before delivering, verify:
 
 - [ ] No filler, hedging, or marketing adverbs remain ("simply", "just",
-      "easily", "seamless(ly)", "effortlessly", "obviously", "please",
-      "we", "let's", "might want to")
-- [ ] No empty openers remain ("In today's fast-paced world…", "It is
-      important to note…", "In conclusion…")
+      "easily", "seamless(ly)", "actually", "literally", "truly", "really",
+      "-ly" softeners)
+- [ ] No empty openers remain ("Here's the thing", "In today's fast-paced
+      world", "It is important to note", "In conclusion")
 - [ ] No jargon or leverage verbs remain ("leverage", "utilize",
-      "streamline", "delve", "harness", "robust", "cutting-edge",
-      "best-in-class")
+      "streamline", "delve", "navigate", "lean into", "deep dive",
+      "circle back", "robust", "cutting-edge", "best-in-class")
+- [ ] No meta-commentary remains ("The rest of this essay explains…")
+- [ ] No vague declaratives remain ("The implications are significant") —
+      the specific thing is named
+- [ ] No false agency or passive voice remains — a real actor is named
+- [ ] No binary contrasts, negative listing, or dramatic fragmentation remain
+- [ ] No rhetorical setups or rhetorical questions remain
 - [ ] No future tense for current behavior ("will create" → "creates")
 - [ ] No em-dashes remain (unless the user opted to keep them)
 - [ ] No exclamation marks, rhetorical questions, or emojis
 - [ ] Every sentence ≤ 25 words
+- [ ] Rhythm is varied — no metronomic cadence, no stacked fragments
 - [ ] Meaning, facts, and technical terms unchanged
