@@ -11,7 +11,7 @@ description: >-
   that is not about AI-slop.
 metadata:
   author: Christian Galsterer
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Remove AI Slop
@@ -32,10 +32,27 @@ does not invent content or restructure the document.
    exact location (line or sentence), the current phrase, and a proposed
    replacement.
 3. **Report before editing** (unless the user asked for auto-fix). Present
-   findings as a table: Location → Phrase → Suggested fix. Let the user
-   accept or reject before you apply changes.
-4. **Apply the fixes** as edits. Keep the meaning, facts, and technical
-   terms intact.
+   findings as a numbered table where each entry gets a number starting at 1:
+
+   | # | Location | Phrase | Suggested fix |
+   |---|----------|--------|---------------|
+
+   Let the user accept or reject findings before you apply changes.
+4. **Apply the selected fixes.** The user picks which findings to fix by
+   number. Keep the meaning, facts, and technical terms intact.
+
+   **Selecting findings.** Selection is 1-based and can be a single number,
+   a comma-separated list, a range, or any combination:
+
+   - Single: `3`
+   - List: `1,2,5`
+   - Range: `1-3`
+   - Combined: `1-3,5,7-8`
+
+   Whitespace after commas is allowed and ignored (`1, 3` → findings 1 and
+   3). An out-of-range number is not an error in the whole selection — apply
+   the valid findings and report the ones that don't exist. Apply only what
+   the user selected; leave the rest untouched for a later pass.
 5. **Re-verify** against the validation checklist at the bottom, fix any
    remaining violations, then present the result.
 

@@ -24,8 +24,8 @@ Reviews and cleans AI-slop from writing: filler and marketing adverbs ("simply",
 
 1. Identifies the setting (file on disk vs. inline prose).
 2. Scans for slop categories and records each location, phrase, and proposed replacement.
-3. Reports findings as a Location → Phrase → Suggested fix table before editing (unless auto-fix requested).
-4. Applies edits, preserving meaning, facts, and technical terms.
+3. Reports findings as a numbered table (`# | Location | Phrase | Suggested fix`) before editing (unless auto-fix requested).
+4. Applies only the selected fixes — the user picks findings by entering a number, a comma-separated list, a range, or a combination (`3`, `1,2,5`, `1-3`, `1-3,5,7-8`) — preserving meaning, facts, and technical terms.
 5. Re-verifies against the built-in checklist (no filler, no jargon, no em-dashes by default, no exclamation marks, sentences ≤ 25 words) before presenting the result.
 
 ## Installation
