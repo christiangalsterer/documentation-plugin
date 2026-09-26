@@ -1,7 +1,7 @@
 ---
 name: tech-writer
 description: >-
-  Write and edit technical documentation in a professional tone, following a
+  Write and edit technical documentation in a professional tone and grammar, following a
   fixed document structure (title, overview, prerequisites, steps,
   troubleshooting, next steps) and Microsoft Writing Style Guide markdown
   conventions. Use when writing, drafting, reviewing, or reformatting
@@ -16,7 +16,7 @@ metadata:
 
 # Tech Writer
 
-Write technical documentation in a professional tone with a fixed document
+Write technical documentation in a professional tone and grammar with a fixed document
 structure and Microsoft Writing Style Guide markdown conventions. Output is
 always a single markdown document.
 
