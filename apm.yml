@@ -1,0 +1,10 @@
+name: documentation-plugin
+version: "1.1.0"
+description: Agent and skills for writing, maintaining, and cleaning technical documentation, with Kafka integration expertise.
+author:
+  name: Christian Galsterer
+license: MIT
+type: hybrid
+targets:
+  - claude
+  - opencode

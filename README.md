@@ -28,6 +28,14 @@ Reviews and cleans AI-slop from writing: filler and marketing adverbs ("simply",
 4. Applies only the selected fixes — the user picks findings by entering a number, a comma-separated list, a range, or a combination (`3`, `1,2,5`, `1-3`, `1-3,5,7-8`) — preserving meaning, facts, and technical terms.
 5. Re-verifies against the built-in checklist (no filler, no jargon, no em-dashes by default, no exclamation marks, sentences ≤ 25 words) before presenting the result.
 
+## Agent
+
+### `kafka-integration-expert`
+
+An on-demand Kafka specialist for designing, evaluating, troubleshooting, and discussing Kafka integrations. Covers producers and consumers, delivery guarantees, partitioning, Kafka Connect and Streams, schemas, security, operations, failure recovery, and Kafka-compatible managed services. It asks for version and deployment context when those details affect correctness and makes assumptions explicit.
+
+The agent is authored as an APM agent primitive in `.apm/agents/kafka-integration-expert.agent.md` and deploys to Claude Code and OpenCode. OpenCode installs the agent at `.opencode/agents/kafka-integration-expert.md`. Consult the [APM primitives and targets matrix](https://microsoft.github.io/apm/concepts/primitives-and-targets/) for support on other harnesses.
+
 ## Installation
 
 This plugin is loaded automatically by Claude Code when placed in your project or global plugin directory. See the [Claude Code plugin documentation](https://docs.anthropic.com/en/docs/claude-code/plugins) for setup details.
