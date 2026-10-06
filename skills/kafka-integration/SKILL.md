@@ -2,6 +2,7 @@
 name: kafka-integration
 description: >-
   Design, implement, review, and troubleshoot Apache Kafka integrations.
+  Activate when a request involves Kafka-specific topics or scenarios. 
   Use for producers, consumers, topics, partitions, delivery semantics,
   Kafka Connect and Streams, schemas, security, operations, recovery, and
   Kafka-compatible managed services. Works as a standalone guide for people
