@@ -34,7 +34,7 @@ Provides reusable Kafka-specific guidance for designing, implementing, reviewing
 
 For Kafka documentation, use this skill to establish the technical facts and `tech-writer` to apply document structure and writing conventions.
 
-## Agent
+## Agents
 
 ### `kafka-integration-expert`
 

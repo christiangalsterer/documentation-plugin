@@ -30,14 +30,19 @@ always a single markdown document.
    Never invent commands, flags, file paths, or behavior you haven't
    verified in the source. Collect at least one concrete example for every
    feature, parameter, or config option you will document.
-3. **Draft using the fixed structure** below. Skip a section only when it
+3. **Check for a domain skill.** If the document's subject matches an available
+   domain skill (for example `kafka-integration` for Kafka), use it to verify
+   technical claims before drafting. Treat the user's notes as input to check,
+   not as proof. If no domain skill is available, list the claims you could
+   not verify and flag them in your reply.   
+4. **Draft using the fixed structure** below. Skip a section only when it
    is genuinely empty (e.g. no prerequisites) — never invent content to
    fill one. Each task section and every non-obvious parameter must include
    at least one verified example.
-4. **Apply the conventions.** Read `references/markdown-conventions.md`
+5. **Apply the conventions.** Read `references/markdown-conventions.md`
    before writing and again as a checklist after drafting. It defines
    headings, lists, code blocks, links, tables, and tone rules.
-5. **Validate the draft** against the checklist at the bottom of this file,
+6. **Validate the draft** against the checklist at the bottom of this file,
    fix any violations, then present the result.
 
 ## Fixed document structure
@@ -124,3 +129,4 @@ Before presenting the document, verify:
 - [ ] No "simply/just/easily", no exclamation marks, no future tense
       ("will") for current behavior
 - [ ] All conventions in `references/markdown-conventions.md` applied
+- [ ] Technical claims were checked with a domain skill, or flagged as unverified
